@@ -57,6 +57,8 @@ Copy `.env.example` to `.env` and adjust the values as needed.
 | `PUTER_DOMAIN` | Domain for the instance | `localhost` |
 | `STORAGE_PATH` | Path for user data storage | `./data` |
 
+> **Personal note:** I run this on my home server with `STORAGE_PATH` pointed to an external drive (`/mnt/storage/puter`) so user data survives container rebuilds. Recommend doing the same if you're self-hosting long-term.
+
 ## Development
 
 ```bash
