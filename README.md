@@ -59,6 +59,8 @@ Copy `.env.example` to `.env` and adjust the values as needed.
 
 > **Personal note:** I run this on my home server with `STORAGE_PATH` pointed to an external drive (`/mnt/storage/puter`) so user data survives container rebuilds. Recommend doing the same if you're self-hosting long-term.
 
+> **Heads up:** Port `4100` can conflict with some React/Vue dev servers if you're running this alongside other projects. I changed mine to `4200` in `.env` to avoid the headache — just remember to update the Docker `-p` flag too if you go that route.
+
 ## Development
 
 ```bash
