@@ -61,6 +61,8 @@ Copy `.env.example` to `.env` and adjust the values as needed.
 
 > **Heads up:** Port `4100` can conflict with some React/Vue dev servers if you're running this alongside other projects. I changed mine to `4200` in `.env` to avoid the headache — just remember to update the Docker `-p` flag too if you go that route.
 
+> **Low-spec hardware tip:** If you're running this on something like a Raspberry Pi or an older box with ≤2GB RAM, add `--max-old-space-size=512` to the node start command in `package.json` to keep memory usage in check. Without it I was seeing the process get OOM-killed after a day or two of uptime.
+
 ## Development
 
 ```bash
