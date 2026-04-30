@@ -26,6 +26,8 @@ docker run -d \
 
 Then open [http://localhost:4100](http://localhost:4100) in your browser.
 
+> **WSL2 note:** If you're running Docker Desktop on Windows with WSL2 and `localhost` isn't resolving, try `127.0.0.1:4100` directly, or find the WSL2 VM's IP via `ip addr show eth0` inside your WSL terminal and use that instead. Spent way too long on this one.
+
 ### Manual Setup
 
 **Prerequisites:**
