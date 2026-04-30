@@ -67,25 +67,4 @@ Copy `.env.example` to `.env` and adjust the values as needed.
 
 > **Low-spec hardware tip:** If you're running this on something like a Raspberry Pi or an older box with ≤2GB RAM, add `--max-old-space-size=512` to the node start command in `package.json` to keep memory usage in check. Without it I was seeing the process get OOM-killed after a day or two of uptime.
 
-> **nginx reverse proxy tip:** If you're putting this behind nginx, make sure to set `proxy_read_timeout 3600;` and `proxy_send_timeout 3600;` in your server block — the default 60s timeout causes issues with longer file uploads. Also add `client_max_body_size 512m;` if you plan on uploading large files.
-
-## Development
-
-```bash
-# Run in development mode with hot reload
-npm run dev
-
-# Run tests
-npm test
-
-# Lint
-npm run lint
-```
-
-## Contributing
-
-Pull requests are welcome! Please open an issue first to discuss major changes.
-
-## License
-
-AGPL-3.0 — see [LICENSE](LICENSE) for details.
+> **nginx reverse proxy tip:** If you're putting this behind nginx, make sure to set `proxy_read_timeout 3600;` and `proxy_send_timeout 3600;` in your nginx config — Puter uses long-lived connections and nginx's default 60s timeout will cause random disconnects. Also add `proxy_buffering off;` if you notice the file manager feeling sluggish.
