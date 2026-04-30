@@ -49,6 +49,8 @@ cp .env.example .env
 npm start
 ```
 
+> **Local dev subdomain note:** Puter uses subdomains internally (e.g. `api.puter.localhost`, `js.puter.localhost`). If things aren't loading right when running manually, make sure your browser supports `.localhost` subdomains — Chrome and Firefox handle these fine without any `/etc/hosts` changes, but I had to add entries manually on one older machine. Add lines like `127.0.0.1 puter.localhost api.puter.localhost js.puter.localhost` to `/etc/hosts` if you run into 404s or blank screens.
+
 ## Configuration
 
 Copy `.env.example` to `.env` and adjust the values as needed.
